@@ -30,16 +30,23 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <button @click="onBuy">Buy</button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import store from '@/store';
 
 export default defineComponent({
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  methods: {
+    onBuy() {
+      store.dispatch('testBuy');
+    },
   },
 });
 </script>

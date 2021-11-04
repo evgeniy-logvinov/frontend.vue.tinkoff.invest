@@ -1,3 +1,4 @@
+import TinkoffService from '@/services/TinkoffService';
 import { createStore } from 'vuex';
 
 export default createStore({
@@ -6,6 +7,10 @@ export default createStore({
   mutations: {
   },
   actions: {
+    async testBuy({ commit }) {
+      const user = await TinkoffService.testbuy();
+      // commit('setCurrrentUser', user);
+    },
   },
   modules: {
   },
